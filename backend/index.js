@@ -4,12 +4,12 @@ const socketio = require('socket.io')
 const mongoose = require('mongoose')
 
 const server = app.listen(5000) 
-const io = socketio(server, {cors: {origin: "http://localhost:3000"}})
+const io = socketio(server, {cors: {origin: "*"}})
 
 //CORS
 var cors = require('cors')
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: '*',
   credentials: true,
 };
 app.use(cors(corsOptions))
@@ -17,7 +17,7 @@ app.use(cors(corsOptions))
 const Game = require('./Models/Game')
 const QuotableAPI = require('./QuotableAPI')
 
-const mongoURI = "mongodb://localhost:27017/typinggame"
+const mongoURI = "mongodb+srv://minorProject:aSy9r4RuD9ZNka24@cluster0.le9ctvj.mongodb.net/typing-game?retryWrites=true&w=majority"
 mongoose.connect(mongoURI, console.log("Connected to DB")) 
 
 const calculateTime = (time) => {
