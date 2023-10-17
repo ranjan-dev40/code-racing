@@ -10,6 +10,7 @@ import socket from './SocketConfig';
 import JoinGame from './components/JoinGame';
 import TypingGame from './components/TypingGame'
 import { useNavigate } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
     <>
       {/* <Router history={history}>
           </Router> */}
+        <Navbar></Navbar>
+        <div style={{height: "5rem"}}></div>
         <Routes>
           <Route exact path="/" element={<GameMenu/>} />
           <Route exact path="/game/create" element={<CreateGame/>} />

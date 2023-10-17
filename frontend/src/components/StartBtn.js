@@ -14,9 +14,11 @@ const StartBtn = (props) => {
 
     return (
         player.isCreator && showBtn ? <>
-            <button type="button" onClick={onClickHandler} className="btn btn-primary">Start Game</button>
+            <div style={{display: "flex", justifyContent: "center", margin: "1rem"}}>
+                <button type="button" onClick={onClickHandler} className="btn btn-primary">Start Game</button>
+            </div>
         </>    : null
-  )
+   )
 }
 
 export default StartBtn

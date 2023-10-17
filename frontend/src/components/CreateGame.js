@@ -15,9 +15,8 @@ const CreateGame = (props) => {
 
     return (
         <>
-            <div className='row'>
-                <div className="col-sm"></div>
-                <div className="col-sm-8">
+            <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+                <div style={{width: "80%"}}>
                     <h1 className="text-center">Create Game</h1>
                     <form onSubmit={onSubmit}>
                         <div className="form-group">
@@ -27,7 +26,6 @@ const CreateGame = (props) => {
                         <button type="submit" className="btn btn-primary mt-3">Submit</button>
                     </form>
                 </div>
-                <div className="col-sm"></div>
             </div>
         </>
     )

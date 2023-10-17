@@ -34,7 +34,7 @@ const Form = ({isOpen, isOver, gameID}) => {
             <div className='col-sm-4'>
                 <form>
                     <div className="form-group">
-                        <input type="text" readOnly={isOpen || isOver} onChange={onChange} value={userInput} className="form-control" ref={textInput}/>
+                        <input type="text" readOnly={isOpen || isOver} onChange={onChange} value={userInput} className="form-control" ref={textInput} placeholder='Type text here'/>
                     </div>
                 </form>
             </div>

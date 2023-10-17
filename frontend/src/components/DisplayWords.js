@@ -36,9 +36,13 @@ const DisplayWords = (props) => {
 
     return (
     <>
-        {getTypedWords(wordArray, player)}
-        {getCurrentWord(wordArray, player)}
-        {getWordsToBeTyped(wordArray, player)}
+        <div style={{display: "flex", justifyContent: "center"}}>
+            <div style={{display: "flex", fontSize: "1.5rem", flexDirection: "row", justifyContent: "center", border: "2px solid black", borderRadius: "1rem", padding: "1rem", margin: "1rem"}}>
+                <p>
+                {getTypedWords(wordArray, player)}{getCurrentWord(wordArray, player)}{getWordsToBeTyped(wordArray, player)}
+                </p>
+            </div>
+        </div>
     </>
   )
 }

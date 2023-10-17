@@ -6,12 +6,13 @@ const GameMenu = () => {
   return (
     <>
         <div className='text-center'>
-            <h1>Welcome to Typing Game</h1>
+            <div style={{height: "10rem"}}></div>
+            <h1 style={{fontWeight: "700"}}>Welcome to Typing Game</h1>
             {/* mr-3 is m-3 in bootstrap 5*/}
             <button type="button"  className='btn btn-primary btn-lg m-3' onClick={()=>{navigate('/game/create')}}>
                 Create Game
             </button>
-            <button type="button" className='btn btn-primary btn-lg' onClick={()=>{navigate('/game/join')}}>
+            <button type="button" className='btn btn btn-outline-secondary btn-lg' onClick={()=>{navigate('/game/join')}}>
                 Join Game
             </button>
         </div>

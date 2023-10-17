@@ -17,7 +17,8 @@ app.use(cors(corsOptions))
 const Game = require('./Models/Game')
 const QuotableAPI = require('./QuotableAPI')
 
-const mongoURI = "mongodb+srv://minorProject:aSy9r4RuD9ZNka24@cluster0.le9ctvj.mongodb.net/typing-game?retryWrites=true&w=majority"
+// const mongoURI = "mongodb+srv://minorProject:aSy9r4RuD9ZNka24@cluster0.le9ctvj.mongodb.net/typing-game?retryWrites=true&w=majority"
+const mongoURI = "mongodb://localhost:27017/typinggame"
 mongoose.connect(mongoURI, console.log("Connected to DB")) 
 
 const calculateTime = (time) => {
@@ -43,7 +44,7 @@ const startGameClock = async (gameID) => {
     let time = 120
 
     let timerID = setInterval(function gameIntervalFunc() {
-
+ 
         if (time >= 0) {
             const formatTime = calculateTime(time)
             io.to(gameID).emit('timer', {countDown : formatTime, msg : "Time Remaining"})
@@ -71,6 +72,7 @@ const startGameClock = async (gameID) => {
         return gameIntervalFunc
     }(), 1000)
 }
+
 
 io.on('connect', (socket)=> {
 
@@ -120,7 +122,7 @@ io.on('connect', (socket)=> {
                     game.isOpen = false
                     game = await game.save()
                     io.to(gameID).emit('updateGame', game)
-                    startGameClock(gameID)
+                    await startGameClock(gameID)
                     clearInterval(timerID)
                 }
             }, 1000)

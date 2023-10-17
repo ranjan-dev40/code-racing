@@ -1,5 +1,18 @@
 import React from 'react'
 
+const PlayerInfo = (props) => {
+    return (
+        <>
+            <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+                <h5 style={{fontWeight: "700"}} className="text-left">{props.userName} :&nbsp;</h5>
+                <div className="progress my-1" style={{width: "90%"}}key={props._id}>
+                    <div className="progress-bar" role="progressbar" style={{width: props.percentage}}>{props.percentage}</div>
+                </div>  
+            </div> 
+        </>
+    )
+}
+
 const ProgressBar = ({player, players, wordsLength}) => {
 
     const calculatePercentage = (player, wordsLength) => {
@@ -10,14 +23,11 @@ const ProgressBar = ({player, players, wordsLength}) => {
     }
     const percentage = calculatePercentage(player, wordsLength)
 
-  return (
+    return (
         <>
             {
                 <>
-                    <h5 className="text-left">{player.userName}</h5>
-                    <div className="progress my-1" key={player._id}>
-                        <div className="progress-bar" role="progressbar" style={{width: percentage}}>{percentage}</div>
-                    </div>
+                    <PlayerInfo userName={player.userName} _id={player._id} percentage={percentage}/>
                 </>
             }
             {
@@ -25,16 +35,13 @@ const ProgressBar = ({player, players, wordsLength}) => {
                     const percentage = calculatePercentage(playerObj, wordsLength)
                     return (playerObj._id !== player._id ? 
                     <>
-                        <h5 className="text-left">{playerObj.userName}</h5>
-                        <div className="progress my-1" key={playerObj._id}>
-                            <div className="progress-bar" role="progressbar" style={{width: percentage}}>{percentage}</div>
-                        </div>
+                        <PlayerInfo userName={playerObj.userName} _id={playerObj._id} percentage={percentage}/>
                     </> : null
                     )
                 })
             }
         </>
-  )
+    )
 }
 
 export default ProgressBar

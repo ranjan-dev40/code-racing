@@ -26,17 +26,17 @@ const TypingGame = (props) => {
 
     return (
         <>
-            <div className="text-center">
+            <div style={{display: "flex", flexDirection: "column"}}>
                 <DisplayWords wordArray={wordArray} player={player} gameID={_id}/>
-                <ProgressBar players={players} player={player} wordsLength={wordArray.length}/>
                 <Form isOpen={isOpen} isOver={isOver} gameID={_id}/>
                 <Countdown></Countdown>
                 <StartBtn player={player} gameID={_id}></StartBtn>
+                <ProgressBar players={players} player={player} wordsLength={wordArray.length}/>
                 <DisplayGameCode gameID={_id}/>
                 <ScoreBoard players={players}/>
             </div>
         </>
-  )
+    )
 }
 
 export default TypingGame

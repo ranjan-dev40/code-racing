@@ -19,8 +19,13 @@ const Countdown = (props) => {
 
   return (
     <>
-        <h1>{countDown}</h1>
-        <h3>{msg}</h3>
+        <div style={{display: "flex", justifyContent: "center"}}>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+                <h1>{countDown}</h1>
+                <h3>{msg}</h3>
+            </div>
+
+        </div>
     </>
   )
 }
