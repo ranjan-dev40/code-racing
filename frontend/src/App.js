@@ -19,7 +19,6 @@ function App() {
 
   useEffect(()=>{
      socket.on('updateGame', (game) => {
-        console.log(game)
         setGameState(game)
      })
 

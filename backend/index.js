@@ -17,8 +17,8 @@ app.use(cors(corsOptions))
 const Game = require('./Models/Game')
 const QuotableAPI = require('./QuotableAPI')
 
-// const mongoURI = "mongodb+srv://minorProject:aSy9r4RuD9ZNka24@cluster0.le9ctvj.mongodb.net/typing-game?retryWrites=true&w=majority"
-const mongoURI = "mongodb://localhost:27017/typinggame"
+// const mongoURI = "mongodb://localhost:27017/typinggame"
+const mongoURI = "mongodb+srv://minor-project:k4fSgmpNuI9Am6gZ@cluster0.le9ctvj.mongodb.net/typing-game?retryWrites=true&w=majority"
 mongoose.connect(mongoURI, console.log("Connected to DB")) 
 
 const calculateTime = (time) => {
@@ -166,6 +166,7 @@ io.on('connect', (socket)=> {
             game = await game.save()
 
             const gameID = game._id.toString()
+            
             socket.join(gameID) 
              
             io.to(gameID).emit('updateGame', game)

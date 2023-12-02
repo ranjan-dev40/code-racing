@@ -29,8 +29,6 @@ const DisplayWords = (props) => {
     const getWordsToBeTyped = (wordArray, player) => {
         let wordsToBeTyped = wordArray.slice(player.currWordInd + 1, wordArray.length)
         wordsToBeTyped = wordsToBeTyped.join(" ")
-        console.log(wordsToBeTyped)
-
         return <span>{wordsToBeTyped}</span>
     }
 
