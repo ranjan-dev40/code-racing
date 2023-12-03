@@ -15,6 +15,9 @@ const GameMenu = () => {
             <button type="button" className='btn btn btn-outline-secondary btn-lg' onClick={()=>{navigate('/game/join')}}>
                 Join Game
             </button>
+            <div>
+                <button className='btn btn-outline-secondary btn-lg' onClick={()=>{navigate('/game/image')}}>Image Typing</button>
+            </div>
         </div>
     </>
   )

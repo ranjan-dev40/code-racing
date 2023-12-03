@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
   return (
     <>
-        <nav className="navbar navbar-expand-lg fixed-top" style={{borderRadius: "0.2rem", backgroundColor: "#2c2842"}}>
+        <nav className="navbar navbar-expand-lg fixed-top" style={{backgroundColor: "#2c2842"}}>
         <div className="container-fluid">
             <a style={{fontWeight: "700"}}className="navbar-brand text-white" href="/">Multiplayer Typing Game</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

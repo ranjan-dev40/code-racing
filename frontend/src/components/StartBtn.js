@@ -21,4 +21,4 @@ const StartBtn = (props) => {
    )
 }
 
-export default StartBtn
+export default StartBtn;

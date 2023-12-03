@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const socketio = require('socket.io')
 const mongoose = require('mongoose')
+const {getJson}=require('serpapi');
 
 const server = app.listen(5000) 
 const io = socketio(server, {cors: {origin: "*"}})
@@ -26,6 +27,23 @@ const calculateTime = (time) => {
     let seconds = time % 60
     return `${minutes}:${seconds < 10 ? "0"+seconds : seconds}`
 }
+
+//Image Game Grammar Check Get Method
+app.get('/game/serpapi',(req,res)=>{
+    try{
+        console.log(req.query.param1);
+        getJson({
+            engine: "google",
+            q: `${req.query.param1} .grammar check`,
+            api_key: "c661171606af6399af91bf3e7407927bc9683a977a147f6f8167b0f3a2a2befc"
+        },(json)=>{
+            res.send(json.grammar_check);
+            console.log(json);
+        });
+    }catch(err){
+        res.send(err);
+    }
+});
 
 const calculateWPM = (endTime, startTime, player) => {
     let numOfWords = player.currWordInd
