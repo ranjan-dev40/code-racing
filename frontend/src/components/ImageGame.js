@@ -11,7 +11,7 @@ const ImageGame = (props) => {
     const submitData=async()=>{
         setSuccess(true);
         try{
-            await fetch(`http://localhost:5000/game/serpapi?param1=${data}`)
+            await fetch(`https://typing-game-yl62.onrender.com/game/serpapi?param1=${data}`)
                 .then((res)=>{
                     return res.json();
                 })
