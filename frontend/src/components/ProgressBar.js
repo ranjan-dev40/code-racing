@@ -1,11 +1,8 @@
-import React,{useEffect, useRef,useState} from 'react'
-
-// ... (imports remain the same)
+import React, { useEffect, useRef, useState } from 'react';
 
 const PlayerInfo = (props) => {
     const gradientRef = useRef();
     const [Color1, setColor1] = useState(360);
-    const [Color2, setColor2] = useState(0);
 
     const changeGradient = (x) => {
         const gradient = `conic-gradient(lightgrey 0deg, lightgrey ${x}deg, #448aff ${x}deg, #448aff 360deg)`;
@@ -17,13 +14,12 @@ const PlayerInfo = (props) => {
             const degrees = 360 - (props.percentage * 360) / 100;
             changeGradient(degrees);
             setColor1(degrees);
-            setColor2(360);
         }
     };
 
     useEffect(() => {
         calc();
-    }, [props.percentage]);
+    }, [props.percentage, calc]);
 
     return (
         <div className='d-flex align-items-center justify-content-center gap-1 px-3 mb-1'>
