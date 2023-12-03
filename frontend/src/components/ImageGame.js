@@ -17,7 +17,6 @@ const ImageGame = (props) => {
                 })
                 .then((d)=>{
                     setResults(d);
-                    console.log(d);
                 });
             setSuccess('true');
         }catch(err){
@@ -25,7 +24,6 @@ const ImageGame = (props) => {
             setSuccess('false');
         }
         setSuccess(false);
-        console.log(results);
     }
 
     const changeData=(e)=>{
