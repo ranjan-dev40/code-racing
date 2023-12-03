@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import StartBtn from './StartBtn';
-import ProgressBar from './ProgressBar';
-import ScoreBoard from './ScoreBoard';
+// import StartBtn from './StartBtn';
+// import ProgressBar from './ProgressBar';
+// import ScoreBoard from './ScoreBoard';
 
 
 const ImageGame = (props) => {
