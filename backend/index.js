@@ -4,6 +4,7 @@ const socketio = require('socket.io')
 const mongoose = require('mongoose')
 const {getJson}=require('serpapi');
 
+
 const server = app.listen(5000) 
 const io = socketio(server, {cors: {origin: "*"}})
 
